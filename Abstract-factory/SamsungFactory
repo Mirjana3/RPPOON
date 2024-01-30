@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ApstraktnaTvornicaExtraPrimjer
+{
+    public class SamsungFactory : ITvFactory
+    {
+        public ITv CreateTv()
+        {
+            return new SamsungTv();
+        }
+
+        public IDisplay CreateDisplay()
+        {
+            return new SamsungDisplay();
+        }
+    }
+}
