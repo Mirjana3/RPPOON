@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_ponasanja
+{
+    public class BaseHandler : IHandler
+    {
+        protected IHandler successor;
+        private IHandler last;
+
+        public virtual void HandleRequest(DamageRequest damage)
+        {
+            if (successor != null)
+            {
+                successor.HandleRequest(damage);
+            }
+        }
+
+        public void SetSuccessor(IHandler handler)
+        {
+            if(successor == null)
+            {
+                successor = handler;
+                last = successor;
+            }
+            else
+            {
+                last.SetSuccessor(handler);
+                last = handler;
+            }
+        }
+    }
+}
