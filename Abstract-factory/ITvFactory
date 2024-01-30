@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ApstraktnaTvornicaExtraPrimjer
+{
+    public interface ITvFactory
+    {
+        ITv CreateTv();
+        IDisplay CreateDisplay();
+    }
+}
