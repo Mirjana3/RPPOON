@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public class UI
+    {
+        public GameManager gm = GameManager.GetInstance();
+        public UI()
+        {
+            gm.GetUIElements();
+        }
+    }
+}
