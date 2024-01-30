@@ -14,7 +14,7 @@ namespace Obrasci_Stvaranja
         }
         public void Attack()
         {
-            Console.WriteLine($"Attack - {ability}");
+            Console.WriteLine($"Attack - {Ability}");
         }
     }
 }
