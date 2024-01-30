@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_ponasanja
+{
+    public class DamageRequest
+    {
+        public string Name { get; set; }
+
+        public DamageRequest(string Name)
+        {
+            this.Name = Name;
+        }
+    }
+}
