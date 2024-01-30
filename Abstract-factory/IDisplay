@@ -1,0 +1,11 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ApstraktnaTvornicaExtraPrimjer
+{
+    public interface IDisplay
+    {
+        void Use();
+    }
+}
