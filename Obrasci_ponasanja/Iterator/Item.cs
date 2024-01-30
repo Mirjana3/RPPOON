@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_ponasanja
+{
+    public class Item
+    {
+        public Numbers numbers;
+
+        public Item(Numbers numbers)
+        {
+            this.numbers = numbers;
+        }
+    }
+}
