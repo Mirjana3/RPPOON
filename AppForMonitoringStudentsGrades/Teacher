@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AppForStudentsGrades
+{
+    public class Teacher : Person
+    {
+        public List<string> Subjects { get; set; }
+        public Teacher (string name, string surname, int id) : base(name,surname,id)
+        {
+            Subjects = new List<string>();
+        }
+
+       
+        public void AddMarks(Student student, int mark)
+        {
+            student.AddMark(mark);
+        }
+
+        public void DisplayOfStudentsMarks(List<Student> students)
+        {
+            Console.WriteLine($"Teacher {this.name} {this.surname}'s students marks: ");
+
+            foreach (var student in students)
+            {
+                
+                    student.DisplayMarks();
+            }
+        }
+        public void DisplayOfStudentsMarks(Grade grades)
+        {
+            Console.WriteLine($"Teacher {this.name} {this.surname}'s students marks: ");
+
+               foreach(var student in grades.Students)
+                {
+                    if(!(student.Grade.Equals(grades)))
+                    {
+                        student.DisplayMarks();
+                    }
+                }
+        }
+
+    }
+}
