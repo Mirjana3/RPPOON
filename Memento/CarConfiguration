@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Memento
+{
+    public class CarConfiguration
+    {
+        private string model;
+        private List<Equipment> additionalEquipment;
+
+        public CarConfiguration(string model, List<Equipment> additionalEquipment)
+        {
+            this.model = model;
+            this.additionalEquipment = new List<Equipment>(additionalEquipment);
+        }
+
+        public string GetModel() 
+        { 
+            return model; 
+        }
+        public List<Equipment> GetPackages() 
+        { 
+            return new List<Equipment>(additionalEquipment); 
+        }
+    }
+}
