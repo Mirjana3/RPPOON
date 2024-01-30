@@ -1,0 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public abstract class Car
+    {
+        public abstract void Drive();
+    }
+}
