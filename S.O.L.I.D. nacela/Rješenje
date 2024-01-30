@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace SOLID_načela
+{
+    class Rješenje
+    {
+        // SRP
+        public class Employee
+        {
+            public string Name { get; set; }
+            public int CalculateSalary() { }
+
+            public void SaveToDatabase() { }
+        }
+
+        // Klasa Employee ima više odgovornosti
+        // (metoda za izračun plaće i za spremanje
+        // zaposlenika u bazu) te postaje teška za održavanje.
+        // Ako izmjenjujemo jednu od tih metoda može doći do promjene 
+        // u izračunu u drugoj metodi te to stvara ovisnost i česte izmjene 
+        // koda.
+
+        // OCP
+        public class Shape
+        {
+            public string Type { get; set; }
+
+            public double Area()
+            {
+                if (Type == "Circle")
+                {
+                }
+                else if (Type == "Rectangle")
+                {
+                }
+            }
+        }
+
+        // Ova klasa ne poštuje OCP jer bi svaka klasa 
+        // trebala biti zatvorena za izmjene, ali otvorena za 
+        // proširenja. Prilikom dodavanja novih tipova oblika
+        // morali bi mjenjati kod za svaki novi tip oblika.
+        // U ovom slučaju klasa Shape treba biti abstract ili 
+        // interface.
+
+        // LSP
+        public class Car
+        {
+            public virtual void StartEngine()
+            {
+                Console.WriteLine("Engine started.");
+            }
+        }
+
+        public class ElectricCar : Car
+        {
+            public override void StartEngine()
+            {
+                // exception
+            }
+        }
+
+        // LSP princip govori da bi se osnovna klasa trebala moći
+        // zamjeniti sa podklasom. U ovom primjeru to nije moguće
+        // jer električni auto nema motor te bi to izbacivalo iznimku.
+
+
+        // ISP
+        public interface IWorker
+        {
+            void Work();
+            void Eat();
+        }
+
+        public class Robot : IWorker
+        {
+            public void Work() { }
+
+            public void Eat() { }
+        }
+
+        // Ovaj kod narušava ISP princip jer klasa Robot
+        // implementira interface iako Robot ne može da jede.
+        // Prisiljena ne implementacija metode koja nije smislena ili
+        // potrebna.
+
+        // DIP
+
+        public class LightBulb
+        {
+            public void TurnOn() { }
+        }
+
+        public class Switch
+        {
+            private readonly LightBulb lightBulb;
+            // implementacija metode TurnOn pomoću atributa lightBulb
+        }
+
+        // Ovaj primjer ne slijedi DIP jer ovisi o konkretnoj
+        // implemetaciji klase, a treba ovisiti o apstrakciji.
+
+
+    }
+}
