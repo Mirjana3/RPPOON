@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public class Prototip
+    {
+        List<Champion> champions = new List<Champion>()
+        {new Mech(Random.RandomEffect()),
+        new Assassin(Random.RandomAbility())};
+        public void DuplicateChampions()
+        {
+            champions.Add(new Mech(Random.RandomEffect()));
+            champions.Add(new Assassin(Random.RandomAbility()));
+        }
+        public void AttackAll()
+        {
+            foreach (var champion in champions)
+            {
+                champion.Attack();
+            }
+        }
+    }
+}
