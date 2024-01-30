@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public class PresetPermissions
+    {
+        public void Admin(IAccountConfigurator configurator) 
+        {
+            configurator.AddCreatePermission(new CreatePermission());
+            configurator.AddDeletePermission(new DeletePermission());
+            configurator.AddEditPermission(new EditPermission());
+            configurator.AddViewPermission(new ViewPermission());
+        }
+        public void User(IAccountConfigurator configurator) { }
+        public void manager() { }
+    }
+}
