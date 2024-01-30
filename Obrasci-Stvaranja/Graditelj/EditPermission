@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public class EditPermission : IPermission
+    {
+        public void Allow()
+        { 
+            Console.WriteLine("User Has Edit Permission"); 
+        }
+    }
+}
