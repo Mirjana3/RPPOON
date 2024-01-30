@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public class Kod
+    {
+        public static void Run()
+        {
+            CarFactory fordFactory = new FordFactory();
+            Car ford = fordFactory.CreateCar();
+            ford.Drive();
+
+            CarFactory toyotaFactory = new ToyotaFactory();
+            Car toyota = toyotaFactory.CreateCar();
+            toyota.Drive();
+        }
+    }
+}
