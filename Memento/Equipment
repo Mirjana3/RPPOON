@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Memento
+{
+    public class Equipment
+    {
+        public string Name { get; set; }
+
+        public Equipment(string name)
+        {
+            Name = name;
+        }
+    }
+}
