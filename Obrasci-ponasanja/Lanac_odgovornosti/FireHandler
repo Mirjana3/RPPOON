@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_ponasanja
+{
+    public class FireHandler : BaseHandler
+    {
+        public override void HandleRequest(DamageRequest damage)
+        {
+            if(damage.Name == "FireDamage")
+            {
+                Console.WriteLine("Fire damage.");
+            }
+            else
+            {
+                Console.WriteLine("Passed event to next handler.");
+                successor.HandleRequest(damage);
+            }
+        }
+    }
+}
