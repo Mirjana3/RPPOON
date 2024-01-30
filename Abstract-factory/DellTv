@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ApstraktnaTvornicaExtraPrimjer
+{
+    public class DellTv : ITv
+    {
+        public void Use()
+        {
+            Console.WriteLine("Using Dell TV.");
+        }
+    }
+}
