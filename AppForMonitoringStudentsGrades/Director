@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AppForStudentsGrades
+{
+    public class Director : Person
+    {
+        private List<Teacher> Teachers;
+        private List<Student> Students;
+        public Director(string name, string surname, int id) : base(name, surname, id) 
+        {
+            Teachers = new List<Teacher>();
+            Students = new List<Student>();
+        }
+
+        public void AddStudents(Student student)
+        {
+            Students.Add(student);
+        }
+
+        public void AddTeachers(Teacher teacher)
+        {
+            Teachers.Add(teacher);
+        }
+
+        public void RemoveStudents(Student student)
+        {
+            Students.Remove(student);
+        }
+
+        public void RemoveTeachers(Teacher teacher)
+        {
+            Teachers.Remove(teacher);
+        }
+
+        public void DisplaySchoolMarks()
+        {
+            foreach (var student in Students)
+            {
+                student.DisplayMarks();
+            }
+        }
+    }
+}
