@@ -1,0 +1,13 @@
+using System;
+
+namespace Obrasci_Stvaranja
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            new UI();
+            new Character();
+        }
+    }
+}
