@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ApstraktnaTvornicaExtraPrimjer
+{
+    public class App
+    {
+        private ITvFactory tvFactory;
+
+        public App(ITvFactory factory)
+        {
+            tvFactory = factory;
+        }
+
+        public void SellTv()
+        {
+            ITv tv = tvFactory.CreateTv();
+            tv.Use();
+        }
+
+        public void SellDisplay()
+        {
+            IDisplay display = tvFactory.CreateDisplay();
+            display.Use();
+        }
+    }
+
+    // Ovaj kod prati OCP, DIP, SRP, ISP principe
+    // SRP jer svaka klasa ima jednu odgovornost
+    // ISP jer svaki interface je razdvojena u logicki odvojene entitete
+    // DIP jer sve klase ovise o apstrakciji tj inteface-u
+    // OCP jer je kod otvoren za proširenja, a zatvoren za izmjene
+
+}
