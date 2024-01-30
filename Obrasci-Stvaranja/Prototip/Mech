@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public class Mech : Champion
+    {
+        string SpecialEffect;
+
+        public Mech(string specialEffect)
+        {
+            SpecialEffect = specialEffect;
+        }
+
+        public void Attack()
+        {
+            Console.WriteLine($"Attack - {SpecialEffect}");
+        }
+    }
+}
