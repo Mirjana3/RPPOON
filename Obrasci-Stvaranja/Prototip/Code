@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public class Code
+    {
+        public static void Run()
+        {
+            Prototip game = new Prototip();
+            game.DuplicateChampions();
+            game.AttackAll();
+        }
+    }
+}
