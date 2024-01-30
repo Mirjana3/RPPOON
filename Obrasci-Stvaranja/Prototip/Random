@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public class Random
+    {
+        public static string RandomEffect()
+        {
+            Random random = new Random();
+            switch (random.Next(1, 5))
+            {
+                case 1:
+                    return "Fire";
+                case 2:
+                    return "Water";
+                case 3:
+                    return "Air";
+                case 4:
+                    return "Electro";
+                default:
+                    return "No Efect";
+            }
+        }
+        public static string RandomAbility()
+        {
+            Random random = new Random();
+            switch (random.Next(1, 5))
+            {
+                case 1:
+                    return "Shadow Walk";
+                case 2:
+                    return "Stab";
+                case 3:
+                    return "Kick";
+                case 4:
+                    return "Punch";
+                default:
+                    return "No Ability";
+            }
+        }
+    }
+}
