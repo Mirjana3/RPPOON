@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AppForStudentsGrades
+{
+    public class Grade
+    {
+        public string Name { get; set; }
+        public List<Student> Students;
+
+        public Grade (string name)
+        {
+            Name = name;
+            Students = new List<Student>();
+        }
+
+        public void AddStudents(Student student)
+        {
+            Students.Add(student);
+        }
+
+        public void RemoveStudents(Student student)
+        {
+            Students.Remove(student);
+        }
+
+        public void DisplayMark()
+        {
+            foreach (var student in Students)
+            {
+                student.DisplayMarks();
+            }
+        }
+    }
+}
