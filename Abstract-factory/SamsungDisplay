@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ApstraktnaTvornicaExtraPrimjer
+{
+    public class SamsungDisplay : IDisplay
+    {
+        public void Use()
+        {
+            Console.WriteLine("Using Samsung Display.");
+        }
+    }
+}
