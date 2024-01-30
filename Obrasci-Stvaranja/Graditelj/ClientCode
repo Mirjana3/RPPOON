@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_Stvaranja
+{
+    public class ClientCode
+    {
+        public static void Run()
+        {
+            Builder builder = new Builder();
+            PresetPermissions presets = new PresetPermissions();
+
+            presets.Admin(builder);
+
+            List<IPermission> adminPermissions = builder.GetPermissions();
+            Console.WriteLine("Admin Permissions:");
+            foreach (var permission in adminPermissions)
+            {
+                permission.Allow();
+            }
+
+            builder.ClearPermissions();
+
+            presets.User(builder);
+
+            List<IPermission> userPermissions = builder.GetPermissions();
+            Console.WriteLine("\nUser Permissions:");
+            foreach (var permission in userPermissions)
+            {
+                permission.Allow();
+            }
+        }
+
+    }
+}
