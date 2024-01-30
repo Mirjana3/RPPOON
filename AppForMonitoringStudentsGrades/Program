@@ -1,0 +1,36 @@
+﻿using System;
+
+namespace AppForStudentsGrades
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student student1 = new Student("Marko", "Marić", 1, "7");
+            Student student2 = new Student("Marija", "Franjić", 2, "6");
+
+            Grade grade1 = new Grade("1A");
+            grade1.AddStudents(student1);
+            grade1.AddStudents(student2);
+
+            Teacher teacher1 = new Teacher("Nikolina", "Marijanović", 101);
+            teacher1.AddMarks(student1, 5);
+            teacher1.AddMarks(student2, 4);
+
+
+            Director director1 = new Director("Filip", "Božić", 1001);
+            director1.AddStudents(student1);
+            director1.AddStudents(student2);
+            director1.AddTeachers(teacher1);
+
+            grade1.DisplayMark();
+
+            director1.DisplaySchoolMarks();
+
+            Console.WriteLine();
+            teacher1.DisplayOfStudentsMarks(grade1);
+
+
+        }
+    }
+}
