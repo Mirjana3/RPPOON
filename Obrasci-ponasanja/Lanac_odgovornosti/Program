@@ -1,0 +1,20 @@
+using System;
+
+namespace Obrasci_ponasanja
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IHandler firehandler = new FireHandler();
+            IHandler waterhandler = new WaterHanler();
+            IHandler basehandler = new BaseHandler();
+
+            basehandler.SetSuccessor(firehandler);
+            basehandler.SetSuccessor(waterhandler);
+
+            basehandler.HandleRequest(new DamageRequest("WaterDamage"));
+
+        }
+    }
+}
