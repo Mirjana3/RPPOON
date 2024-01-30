@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obrasci_ponasanja
+{
+    public class WaterHanler : BaseHandler
+    {
+        public override void HandleRequest(DamageRequest damage)
+        {
+            if (damage.Name == "WaterDamage")
+            {
+                Console.WriteLine("Water damage.");
+            }
+            else
+            {
+                Console.WriteLine("Passed event to next handler.");
+                successor.HandleRequest(damage);
+            }
+        }
+    }
+}
