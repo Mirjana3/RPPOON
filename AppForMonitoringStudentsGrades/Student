@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AppForStudentsGrades
+{
+    public class Student : Person
+    {
+        public List<int> Mark { get; private set; }
+        public string Grade { get; set; }
+
+        public Student(string name, string surname, int id, string grade) : base(name,surname,id)
+        {
+            Mark = new List<int>();
+            Grade = grade;
+        }
+
+
+        public void AddMark(int mark)
+        {
+            Mark.Add(mark);
+        }
+
+        public void DisplayMarks()
+        {
+            Console.WriteLine($"Marks of student {name} {surname} from {Grade}. grade:");
+            foreach(int mark in Mark)
+            {
+                Console.Write($"{mark} ");
+            }
+            Console.WriteLine();
+        }
+
+    }
+}
