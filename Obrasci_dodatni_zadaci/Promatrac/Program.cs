@@ -23,3 +23,4 @@ namespace Obrasci_dodatni_zadaci
         }
     }
 }
+// Radi se o obrascu ponašanja, a to je Promatrač.
